@@ -10,8 +10,9 @@
 - Using Prisma for database operations such as migration and easy modeling
 
 ## Pre-Requisites
-- NodeJS >= 18.19.1
+- NodeJS >= v18.19.1
 - MySQL database engine [MySQL](https://www.mysql.com/downloads/)
+- Docker v27.0.3 (In case of run with docker)
 
 ## Installation instructions
 
@@ -26,6 +27,9 @@
     - The app will be accessible at ``http://localhost:{{PORT}}``
 - **Before** start the project you need to run `bun run migrate` to run the database migration/creation instructions.
 - Run the project in dev mode : `bun dev`
+
+## Dockerized instructions
+- If you want to use project dockerized you can use `docker compose` to build and run faster.
 
 ## Additional Resources
 - Postman Collection available at `API_COLLECTION`
