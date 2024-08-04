@@ -1,0 +1,404 @@
+{
+	"info": {
+		"_postman_id": "a241ffe7-b160-4564-b2cf-103f83061800",
+		"name": "Simple Shop",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11799982"
+	},
+	"item": [
+		{
+			"name": "Categories",
+			"item": [
+				{
+					"name": "Delete Category",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followRedirects": true,
+						"disableUrlEncoding": false,
+						"disableCookies": false
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "User-Agent",
+								"value": "insomnia/8.6.1"
+							}
+						],
+						"url": {
+							"raw": "{{backend_url}}/categories/1234",
+							"host": [
+								"{{backend_url}}"
+							],
+							"path": [
+								"categories",
+								"1234"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "attach product to category",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": []
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followRedirects": true,
+						"disableUrlEncoding": false,
+						"disableCookies": false
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "User-Agent",
+								"value": "insomnia/8.6.1"
+							}
+						],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Category",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followRedirects": true,
+						"disableUrlEncoding": false,
+						"disableCookies": false
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "User-Agent",
+								"value": "insomnia/8.6.1"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"El Gamed Sub 2\",\n\t\"description\": \"Agamad category\",\n\t\"isParent\": false,\n\t\"parentCategoryId\": \"b7d8a438-ad47-4b1d-bc91-6281beec34ea\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{backend_url}}/categories",
+							"host": [
+								"{{backend_url}}"
+							],
+							"path": [
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Categories",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followRedirects": true,
+						"disableUrlEncoding": false,
+						"disableCookies": false
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "User-Agent",
+								"value": "insomnia/8.6.1"
+							}
+						],
+						"url": {
+							"raw": "{{backend_url}}/categories",
+							"host": [
+								"{{backend_url}}"
+							],
+							"path": [
+								"categories"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Delete Product",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followRedirects": true,
+						"disableUrlEncoding": false,
+						"disableCookies": false
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "User-Agent",
+								"value": "insomnia/8.6.1"
+							}
+						],
+						"url": {
+							"raw": "{{backend_url}}/products/fd044f16-fa80-40a1-bbd5-26eb6f9a5365",
+							"host": [
+								"{{backend_url}}"
+							],
+							"path": [
+								"products",
+								"fd044f16-fa80-40a1-bbd5-26eb6f9a5365"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Products By Category ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followRedirects": true,
+						"disableUrlEncoding": false,
+						"disableCookies": false
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "User-Agent",
+								"value": "insomnia/8.6.1"
+							}
+						],
+						"url": {
+							"raw": "{{backend_url}}/products/category/d1c83873-5c74-423c-b11f-e3c09cdb4890",
+							"host": [
+								"{{backend_url}}"
+							],
+							"path": [
+								"products",
+								"category",
+								"d1c83873-5c74-423c-b11f-e3c09cdb4890"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Product",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followRedirects": true,
+						"disableUrlEncoding": false,
+						"disableCookies": false
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "User-Agent",
+								"value": "insomnia/8.6.1"
+							}
+						],
+						"url": {
+							"raw": "{{backend_url}}/products/fd044f16-fa80-40a1-bbd5-26eb6f9a5365",
+							"host": [
+								"{{backend_url}}"
+							],
+							"path": [
+								"products",
+								"fd044f16-fa80-40a1-bbd5-26eb6f9a5365"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Products",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followRedirects": true,
+						"disableUrlEncoding": false,
+						"disableCookies": false
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "User-Agent",
+								"value": "insomnia/8.6.1"
+							}
+						],
+						"url": {
+							"raw": "{{backend_url}}/products",
+							"host": [
+								"{{backend_url}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Product",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followRedirects": true,
+						"disableUrlEncoding": false,
+						"disableCookies": false
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "multipart/form-data",
+								"disabled": true
+							},
+							{
+								"key": "User-Agent",
+								"value": "insomnia/8.6.1"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{backend_url}}/products",
+							"host": [
+								"{{backend_url}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "backend_url",
+			"value": "http://localhost:3000/api"
+		}
+	]
+}

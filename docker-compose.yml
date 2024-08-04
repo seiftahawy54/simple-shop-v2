@@ -1,0 +1,29 @@
+services:
+  mysqldb:
+    image: mysql:8.0
+    restart: unless-stopped
+    environment:
+      - MYSQL_ROOT_PASSWORD=12345
+      - MYSQL_USER=simple_shop
+      - MYSQL_PASSWORD=12345
+      - MYSQL_DATABASE=vartur-shop
+    volumes:
+      - ./.mysql:/var/lib/mysql
+      - ./node_modules:/app/node_modules
+    ports:
+      - 3306:3306
+  simple-shop-app:
+    build:
+      dockerfile: ./Dockerfile
+    restart: unless-stopped
+    ports:
+      - 3000:3000
+    depends_on:
+      - mysqldb
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - DATABASE_URL=mysql://simple_shop:12345@mysqldb:3306/vartur-shop
+      - STATIC_URL=http://simple-shop-app:3000/static
+    volumes:
+      - .uploads:/usr/src/app
