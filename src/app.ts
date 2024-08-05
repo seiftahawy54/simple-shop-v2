@@ -9,8 +9,6 @@ import path from "path";
 
 dotenv.config()
 
-console.log(`this is data  =>> `, process.env.DATABASE_URL)
-
 const server: FastifyInstance = Fastify({
     logger: true,
 })
@@ -44,8 +42,14 @@ const start = async () => {
         const PORT = parseInt(<string>process.env.PORT) || 3000;
         const address = server.server.address() ? (server.server.address() as {
             address: string;
-        }).address : 'localhost';
-        await server.listen({port: PORT, host: "0.0.0.0"})
+        }).address : '127.0.0.1';
+
+        let host = address
+        if (process.env.NODE_ENV === 'development') {
+            host = 'localhost'
+        }
+
+        await server.listen({port: PORT, host})
         console.log(`server listening on ${address}:${PORT}`)
     } catch (err) {
         server.log.error(err)
